@@ -1,0 +1,78 @@
+footer {
+  .fade-bg {
+    height: 250px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    color: $dark-purple;
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      @media (max-width: 991.98px) {
+        justify-content: center;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      h2, p {
+        margin: 0;
+        padding: 0;
+      }
+      @media (max-width: 575.98px) {
+        h2 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .social-links {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    a {
+      display: block;
+      width: 35px;
+      height: 35px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+      line-height: 0;
+      font-size: 0;
+      color: transparent;
+      padding: 10px;
+      &.github {
+        background-image: url('../../img/github-logo.svg');
+      }
+      &.linkedin {
+        background-image: url('../../img/linkedin-logo.svg');
+      }
+    }
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

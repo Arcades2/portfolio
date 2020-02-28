@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:600,700&display=swap');
+
+body {
+  background-color: $dark-purple !important;
+  font-family: 'Poppins' !important;
+}
+
+strong {
+  color: $cyan;
+}
+
+@mixin absolute-centered() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

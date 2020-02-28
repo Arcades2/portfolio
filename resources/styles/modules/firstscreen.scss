@@ -1,0 +1,49 @@
+.firstscreen {
+  height: 100vh;
+  // background-color: $blue;
+  .screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 150px;
+    &.pink {
+      p {
+        color: $pink;
+      }
+    }
+    p {
+      font-family: 'Poppins';
+      font-weight: 600;
+      color: white;
+      letter-spacing: -13px;
+      text-align: right;
+      line-height: 0.8;
+      font-size: 15rem;
+      margin-right: 100px;
+    }
+    .name {
+      font-size: 15rem;
+    }
+    .job {
+      font-size: 10rem;
+    }
+    @media (max-width: 991.98px) {
+      p, .name {
+        font-size: 10rem;
+      }
+      .job {
+        font-size: 7.5rem;
+      }
+    }
+    @media (max-width: 575.98px) {
+      p, .name {
+        font-size: 6rem;
+        margin-right: 25px !important;
+        letter-spacing: -5px;
+      }
+      .job {
+        font-size: 3rem;
+      }
+    }
+  }
+}

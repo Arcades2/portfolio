@@ -1,0 +1,195 @@
+.project-page {
+  min-height: 100vh;
+  padding-top: 100px;
+  h2 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+  }
+  .project-presentation {
+    color: white;
+    font-size: 1.1rem;
+    margin: 50px;
+    text-align: center;
+    @media (max-width: 575.98px) {
+      margin: 50px 0;
+    }
+    strong {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $cyan;
+    }
+  }
+  .project-list-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &::after {
+      content: '';
+      flex: 33%;
+      flex-grow: 0;
+    }
+    .project-container {
+      flex: 33%;
+      margin: 10px;
+      padding: 10px;
+      flex-grow: 0;
+      @media (max-width: 991.98px) {
+        flex: 100%;
+        max-width: 70%;
+      }
+      @media (max-width: 575.98px) {
+        max-width: 80%;
+        .project-title {
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+        .year {
+          font-size: 0.9rem;
+        }
+        .project-tags {
+          font-size: 0.6rem;
+        }
+      }
+      &:nth-child(even) {
+        .project {
+          &-overlay {
+            left: 0;
+            right: 40px;
+          }
+          &-title {
+            left: -20%;
+            right: unset;
+            p {
+              text-align: right;
+            }
+          }
+          .year {
+            right: 0;
+            transform: rotate(90deg) translate(100%, 1rem);
+            transform-origin: top right;
+            left: unset;
+          }
+          &-tags {
+            right: 0px;
+          }
+          &:hover {
+            .project-overlay {
+              transform: rotate(5deg) scale(1.05);
+            }
+            .project-title {
+              p {
+                transform: translateX(-15%);
+              }
+              .line {
+                left: 100%;
+                top: 50%;
+                transform: rotate(-45deg);
+              }
+            }
+            .project-tags {
+              transform: translateX(30px);
+            }
+            .year {
+              transform: translate(-60px, 30px) rotate(0);
+            }
+          }
+        }
+      }
+    }
+    .project {
+      position: relative;
+      padding-top: 61.8%;
+      margin-bottom: 50px;
+      width: 100%;
+      color: white;
+      &-overlay {
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 40px;
+        background-color: transparentize($cyan, .3);
+        transition: transform .2s ease;
+        &-blur {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgb(56,33,61);
+          background: linear-gradient(45deg, rgba(56,33,61,1) 0%, rgba(18,0,82,0.4990371148459384) 41%, rgba(100,182,172,0.25253851540616246) 81%);
+          transition: opacity 0.2s ease;
+        }
+      }
+      &-title {
+        position: absolute;
+        right: -20%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+        padding-bottom: 10px;
+        h3 {
+          font-size: 2.5rem;
+        }
+        p {
+          transition: transform .2s ease;
+        }
+        .line {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 8px;
+          background-color: $pink;
+          width: 80px;
+          transition: all .2s ease;
+        }
+      }
+      &-tags {
+        position: absolute;
+        bottom: 0;
+        transition: transform .2s ease;
+      }
+      .year {
+        font-weight: bold;
+        display: inline-block;
+        transform: rotate(-90deg) translate(-100%, 1rem);
+        transform-origin: top left;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        transition: transform .2s ease;
+      }
+      &:hover {
+        .project-overlay {
+          transform: rotate(-5deg) scale(1.05);
+          &-blur {
+            opacity: 0.5;
+          }
+        }
+        .project-title {
+          p {
+            transform: translateX(15%);
+          }
+          .line {
+            left: -80px;
+            top: 50%;
+            transform: rotate(45deg);
+          }
+        }
+        .project-tags {
+          transform: translateX(-30px);
+        }
+        .year {
+          transform: translate(60px, 30px) rotate(0);
+        }
+      }
+    }
+  }
+}
